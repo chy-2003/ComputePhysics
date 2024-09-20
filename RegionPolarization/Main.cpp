@@ -37,6 +37,7 @@ struct structure {
 	int NGXF, NGYF, NGZF;
 	double Data[MAX_GRID][MAX_GRID][MAX_GRID]; 
 	void Import();
+	void Print();
 } Structure;
 
 int main() {
@@ -162,5 +163,14 @@ void structure::Import() {
 		for (int NY = 0; NY < NGYF; ++NY)
 			for (int NX = 0; NX < NGXF; ++NX)
 				Data[NX][NY][NZ] = GetFloat();
+	return;
+}
+
+void structure::Print() {
+	printf("%s\n", Name);
+	printf("%.10lf\n", Scale);
+	printf("%.10lf    %.10lf    %.10lf\n", &a.x &a.y, &a.z);
+	printf("%.10lf    %.10lf    %.10lf\n", &b.x &b.y, &b.z);
+	printf("%.10lf    %.10lf    %.10lf\n", &c.x &c.y, &c.z);
 	return;
 }
