@@ -40,6 +40,8 @@ struct structure {
 	void Print();
 } Structure;
 
+FILE* CHGCAR;
+
 int main() {
 	CHGCAR = fopen("CHGCAR", "r");
 	Structure.Import();
@@ -48,7 +50,6 @@ int main() {
 }
 
 char Buffer[1 << MAX_LINE_LENGTH_POW], *BufferL, *BufferR;
-FILE* CHGCAR;
 
 inline int GetChar() {
 	if (BufferL == BufferR) 
